@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ay Order Shop - My Account</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header with Back Button -->
+        <div class="header">
+            <button class="back-btn" onclick="goBack()">
+                <img src="https://cdn-icons-png.flaticon.com/512/93/93634.png" alt="Back" class="back-icon">
+                Back
+            </button>
+            <h2>My Account</h2>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div id="telegramPic" class="profile-pic"></div>
+            <p id="noPicMessage" style="display: none;">This user has no profile picture.</p>
+            <h3 id="telegramName"></h3>
+        </div>
+
+        <!-- User Info Section -->
+        <div class="info-section">
+            <p><strong>Pic:</strong> <span id="telegramPicText"></span></p>
+            <p><strong>Name:</strong> <span id="telegramNameText"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Phone Number:</strong> <span id="phone"></span></p>
+        </div>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="footer-nav">
+        <a href="#" onclick="openPage('home')" class="icon" id="home-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Home Icon" width="22">
+        </a>
+        <a href="#" onclick="openPage('search')" class="icon" id="search-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="Search Icon" width="22">
+        </a>
+        <a href="#" onclick="openPage('cart')" class="icon" id="cart-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3737/3737372.png" alt="Cart Icon" width="22">
+        </a>
+        <a href="#" onclick="openPage('account')" class="icon" id="account-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3033/3033143.png" alt="Account Icon" width="22">
+        </a>
+    </div>
+
+    <script>
+        function openPage(pageName) {
+            window.location.href = pageName + ".html";
+        }
+
+        document.querySelectorAll('.icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                document.querySelectorAll('.icon').forEach(i => i.classList.remove('clicked'));
+                this.classList.add('clicked');
+            });
+        });
+    </script>
+    <script src="account.js"></script>
+</body>
+</html>

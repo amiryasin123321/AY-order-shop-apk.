@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ay Order Shop - My Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<!-- Header with Back Button -->
+<header>
+    <a href="home.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/93/93634.png" alt="Back" class="back-icon">
+    </a>
+    <p>Your Cart ordered</p>
+</header>
+
+<!-- Cart Items -->
+<div id="cart-items" class="cart-container">
+    <!-- Cart items will be populated here using JavaScript -->
+</div>
+
+<!-- Total Price -->
+<div id="total-price" class="total-price-container">
+    Total: <span id="total-amount">0 BIRR</span>
+</div>
+
+<!-- Order Button -->
+<div class="order-container">
+    <button class="order-button">
+        <img src="https://cdn-icons-png.flaticon.com/512/33/33738.png" alt="Order Icon" class="order-icon"> 
+        Place Order
+    </button>
+</div>
+<div class="footer-nav">
+    <a href="#" onclick="openPage('home')" class="icon" id="home-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Home Icon" width="22">
+    </a>
+    </a>
+    <a href="#" onclick="openPage('search')" class="icon" id="search-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="Search Icon" width="22">
+    </a>
+    <a href="#" onclick="openPage('cart')" class="icon" id="cart-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/3737/3737372.png" alt="Cart Icon" width="22">
+    </a>
+    <a href="#" onclick="openPage('account')" class="icon" id="account-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/3033/3033143.png" alt="Account Icon" width="22">
+    </a>
+</div>
+
+<script>
+  function openPage(pageName) {
+    window.location.href = pageName + ".html";
+  }
+
+  // Add a "clicked" class when an icon is clicked
+  document.querySelectorAll('.icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+      document.querySelectorAll('.icon').forEach(i => i.classList.remove('clicked'));
+      this.classList.add('clicked');
+    });
+  });
+</script>
+<script src="cart.js"></script>
+</body>
+</html>

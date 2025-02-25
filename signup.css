@@ -1,0 +1,195 @@
+:root {
+    --primary: #2ecc71;
+    --secondary: #27ae60;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --error: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light);
+}
+
+.auth-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.auth-box {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    font-size: 35px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: var(--light);
+}
+
+.step {
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.help-icon {
+    position: absolute;
+    right: 8px;
+    top: 17px; /* Move above the input */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.help-icon:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.help-message {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--light);
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    top: -100px; /* Position above the icon */
+    right: 8px;
+    font-size: 0.9rem;
+    width:200px;
+    text-align: left;
+}
+
+
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: var(--light);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+    top: -10px;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--primary);
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: var(--error);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+#telegramPic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: left;
+    margin: 0 auto;
+    background-color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+#userInfo p {
+    text-align: left;
+    font-size: 1rem;
+    color: var(--light);
+}
+
+#noPicMessage {
+    color: var(--light);
+    font-size: 0.9rem;
+    text-align:  left;
+    display: none;
+}
+
+.signup-link, .login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.signup-link a, .login-link a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.signup-link a:hover, .login-link a:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}

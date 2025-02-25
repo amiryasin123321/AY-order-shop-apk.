@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AY Order Shop - Login</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>Welcome to AY Order Shop</h1>
+            <p>Sign up using your Telegram account.</p>
+
+            <!-- Step 1: Enter Telegram ID -->
+            <div id="step1" class="step">
+                <div class="form-group">
+                    <input type="text" id="telegramId" required>
+                    <label for="telegramId">Enter your Telegram ID:</label>
+                </div>
+                <button class="btn send-code-btn" onclick="sendCode()">Send Code</button>
+                <img src="photos/question.png" alt="Help" height="22" class="help-icon" onclick="toggleMessage()">
+                <div id="error-message" style="color: orangered; margin-top: 20px;"></div>
+                <div id="help-message" class="help-message">
+    To get your Telegram ID, simply visit the Telegram bot at <a href="https://t.me/Myidbot" target="_blank">@Myidbot</a>. Tap /start, then click /myid. Copy the ID you receive and paste it here to continue with the sign-up process. It’s quick and easy!
+                </div>
+            </div>
+            <!-- Step 2: Enter Verification Code -->
+            <div id="step2" class="step" style="display:none;">
+                <div class="form-group">
+                    <input type="text" id="verifyCode" required>
+                    <label for="verifyCode">Enter the 4-digit code from Telegram Bot @AYordershopBot:</label>
+                </div>
+                <button class="btn verify-btn" onclick="verifyCode()">Verify</button>
+            </div>
+
+            <!-- User Info (Telegram Profile Picture and Name) -->
+            <div id="userInfo" style="display: none;">
+                <div id="telegramPic" class="telegram-pic"></div>
+                <p id="telegramName"></p>
+                <p id="noPicMessage" style="display: none;">This user has no profile picture.</p>
+            </div>
+
+            <!-- Step 3: Enter Email and Phone Number -->
+            <div id="step3" class="step" style="display:none;">
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email:</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="phone" inputmode="numeric" required>
+                    <label for="phone">Phone (Start from +251XXXXXXXXX):</label>
+                </div>
+
+                <button class="btn create-btn" onclick="saveAccount()">Create Account</button>
+            </div>
+
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>
